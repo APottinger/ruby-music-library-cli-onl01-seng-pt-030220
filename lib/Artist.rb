@@ -1,16 +1,8 @@
 require 'pry'
 
 class Artist
-  attr_accessor :name, :song, :musiclibrarycontroller, :musicimporter
-  extend Concerns::Findable
-  @@all = []
-
-  def initialize(name)
-    @name = name
-    @songs = []
-  end
-
-  def self.all
+  
+    def self.all
     @@all
   end
 
@@ -20,6 +12,15 @@ class Artist
 
   def save
     @@all << self
+  end
+  
+  attr_accessor :name, :song, :musiclibrarycontroller, :musicimporter
+  extend Concerns::Findable
+  @@all = []
+
+  def initialize(name)
+    @name = name
+    @songs = []
   end
 
   def self.create(artist)
