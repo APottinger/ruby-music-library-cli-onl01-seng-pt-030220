@@ -1,8 +1,6 @@
 require 'pry'
 
 class Genre
-  attr_accessor :name, :musiclibrarycontroller, :musicimporter
-  extend Concerns::Findable
   @@all = []
 
   def initialize(name)
@@ -21,6 +19,9 @@ class Genre
   def save
     @@all << self
   end
+  
+  attr_accessor :name, :musiclibrarycontroller, :musicimporter
+  extend Concerns::Findable
 
   def self.create(genre)
     genre = self.new(genre)
